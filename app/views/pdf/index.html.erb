@@ -1,0 +1,60 @@
+<h2>Create PDF</h2>
+
+<%= form_tag('/pdf') do %>
+  <%= text_area_tag :content, @html, class: 'content' %>
+
+  <div class="row">
+    <div class="span4">
+
+      <label>Paper size</label>
+      <%= select_tag 'options[page_size]', options_for_select(['Letter', 'A4', 'A3', 'DLE']) %>
+
+      <label>Number of copies</label>
+      <%= number_field_tag 'options[copies]', 1 %>
+
+    </div>
+
+    <div class="span4">
+
+      <label class="checkbox">
+        <%= check_box_tag 'options[orientation]', 'Landscape' %> Landscape orientation
+      </label>
+
+      <label class="checkbox">
+        <%= check_box_tag 'options[grayscale]', true %> Grayscale
+      </label>
+
+      <label class="checkbox">
+        <%= check_box_tag 'options[lowquality]', true %> Low quality
+      </label>
+
+      <label class="checkbox">
+        <%= check_box_tag 'options[disable_javascript]', true %> Disable javascript
+      </label>
+
+      <label class="checkbox">
+        <%= check_box_tag 'options[disable_links]', true %> Disable links
+      </label>
+
+    </div>
+
+    <div class="span4">
+
+      <label>Left aligned footer text</label>
+      <%= text_field_tag 'options[footer_left]', 'All rights reserved' %>
+
+      <label>Centered footer text</label>
+      <%= text_field_tag 'options[footer_center]', 'Company name' %>
+
+      <label>Right aligned footer text</label>
+      <%= text_field_tag 'options[footer_right]', Time.now.year %>
+
+    </div>
+  </div>
+
+  <div class="submit-buttons">
+    <%= submit_tag 'Download PDF', class: 'btn btn-primary' %> or
+    <%= submit_tag 'Upload it to S3', class: 'btn' %>
+  </div>
+
+<% end %>
