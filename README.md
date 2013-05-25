@@ -12,9 +12,6 @@ Navigate to hyperpdf_example_app directory and install missing gems
   
     $ cd hyperpdf_example_app && bundle install
     
-If you want to upload documents to AWS S3, you need to [give permissions](https://devcenter.heroku.com/articles/hyperpdf#s3-permissions) 
-before. Also you should replace 'hyperpdf_test' with your backet name in `app/controllers/pdf_controller.rb`
-  
 Create new heroku application and install HyperPDF add-on
 
     $ heroku create
@@ -24,6 +21,9 @@ Add HyperPDF credentials and RACK_ENV variable to the .env file
 
     $ heroku config -s | grep HYPERPDF_ >> .env
     $ echo "RACK_ENV=development" >> .env
+    
+If you want to upload documents to AWS S3, you need to [give permissions](https://devcenter.heroku.com/articles/hyperpdf#s3-permissions) 
+before. Also you should replace 'hyperpdf_test' with your backet name in `app/controllers/pdf_controller.rb`
     
 Run application locally using [Foreman](https://devcenter.heroku.com/articles/procfile#developing-locally-with-foreman)
 
