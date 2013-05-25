@@ -12,10 +12,6 @@
       <label>Number of copies</label>
       <%= number_field_tag 'options[copies]', 1 %>
 
-    </div>
-
-    <div class="span4">
-
       <label class="checkbox">
         <%= check_box_tag 'options[orientation]', 'Landscape' %> Landscape orientation
       </label>
@@ -48,6 +44,11 @@
 
       <label>Right aligned footer text</label>
       <%= text_field_tag 'options[footer_right]', Time.now.year %>
+
+      <label>
+        Url of footer HTML document (<a target="_blank" href="http://s3.amazonaws.com/hyperpdf_stuff/test_footer.html">example</a>)
+      </label>
+      <%= text_field_tag 'options[footer_html]', nil %>
 
     </div>
   </div>
