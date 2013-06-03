@@ -48,7 +48,7 @@ class PdfController < ApplicationController
     else
       # NOTE: replace 'hyperpdf_test' with your backet name
       url = hyperpdf.upload_to_s3('hyperpdf_test', 'hyperpdf_test.pdf', true)
-      redirect_to :root, notice: "PDF url: #{url}"
+      redirect_to :root, notice: "PDF url: #{url} | Number of pages: #{hyperpdf.meta[:pages]}"
     end
   end
 
