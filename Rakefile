@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-HyperpdfExampleApp::Application.load_tasks
+HypdfExampleApp::Application.load_tasks

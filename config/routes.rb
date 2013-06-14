@@ -1,4 +1,4 @@
-HyperpdfExampleApp::Application.routes.draw do
+HypdfExampleApp::Application.routes.draw do
   get "pdf" => 'pdf#index'
   post "pdf" => 'pdf#create'
 

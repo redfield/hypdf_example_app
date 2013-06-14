@@ -5,14 +5,14 @@ class PdfController < ApplicationController
       <html>
         <head><title>Example HTML</title></head>
         <body>
-          <h1>HyperPDF add-on</h1>
+          <h1>HyPDF add-on</h1>
 
           <div style="background:#E1EAF3;border:1px solid #d0dbe6;border-radius: 3px;color:#4F535D;margin: 0 0 22px 0;padding:12px;">
-            HyperPDF is an <a href="https://addons.heroku.com/hyperpdf">add-on</a> for easy and flexible creation of PDF from HTML.
+            HyPDF is an <a href="https://addons.heroku.com/hypdf">add-on</a> for easy and flexible creation of PDF from HTML.
           </div>
 
           <div style="margin:30px 0;-webkit-transform:rotate(5deg);">
-            With HyperPDF you don't need to learn new programming language or technologies, just use familiar HTML, CSS and JavaScript for creating beautiful and complex PDF documents. Moreover, HyperPDF can upload created PDF to your own AWS S3 bucket for you.
+            With HyPDF you don't need to learn new programming language or technologies, just use familiar HTML, CSS and JavaScript for creating beautiful and complex PDF documents. Moreover, HyPDF can upload created PDF to your own AWS S3 bucket for you.
           </div>
 
           <table width="100%">
@@ -41,14 +41,14 @@ class PdfController < ApplicationController
 
   def create
     options = (params[:options] || {}).merge(test: true)
-    hyperpdf = HyperPDF.new(params[:content], options)
+    hypdf = HyPDF.new(params[:content], options)
 
     if params[:commit] == 'Download PDF'
-      send_data(hyperpdf.get, filename: 'hyperpdf_test.pdf', type: 'application/pdf')
+      send_data(hypdf.get, filename: 'hypdf_test.pdf', type: 'application/pdf')
     else
-      # NOTE: replace 'hyperpdf_test' with your backet name
-      url = hyperpdf.upload_to_s3('hyperpdf_test', 'hyperpdf_test.pdf', true)
-      redirect_to :root, notice: "PDF url: #{url} | Number of pages: #{hyperpdf.meta[:pages]}"
+      # NOTE: replace 'hypdf_test' with your backet name
+      url = hypdf.upload_to_s3('hypdf_test', 'hypdf_test.pdf', true)
+      redirect_to :root, notice: "PDF url: #{url} | Number of pages: #{hypdf.meta[:pages]}"
     end
   end
 

@@ -1,29 +1,29 @@
 ## Demo
 
-Demo application can be found [here] (http://hyperpdf-example-app.herokuapp.com).
+Demo application can be found [here] (http://hypdf-example-app.herokuapp.com).
 
 ## Installing
 
 Clone repository to your local machine
 
-    $ git clone git://github.com/redfield/hyperpdf_example_app.git
+    $ git clone git://github.com/redfield/hypdf_example_app.git
   
-Navigate to hyperpdf_example_app directory and install missing gems
+Navigate to hypdf_example_app directory and install missing gems
   
-    $ cd hyperpdf_example_app && bundle install
+    $ cd hypdf_example_app && bundle install
     
-Create new heroku application and install HyperPDF add-on
+Create new heroku application and install HyPDF add-on
 
     $ heroku create
-    $ heroku addons:add hyperpdf
+    $ heroku addons:add hypdf
     
-Add HyperPDF credentials and RACK_ENV variable to the .env file
+Add HyPDF credentials and RACK_ENV variable to the .env file
 
-    $ heroku config -s | grep HYPERPDF_ >> .env
+    $ heroku config -s | grep HYPDF_ >> .env
     $ echo "RACK_ENV=development" >> .env
     
-If you want to upload documents to AWS S3, you need to [give permissions](https://devcenter.heroku.com/articles/hyperpdf#s3-permissions) 
-before. Also you should replace 'hyperpdf_test' with your backet name in `app/controllers/pdf_controller.rb`
+If you want to upload documents to AWS S3, you need to [give permissions](https://devcenter.heroku.com/articles/hypdf#s3-permissions) 
+before. Also you should replace 'hypdf_test' with your bucket name in `app/controllers/pdf_controller.rb`
     
 Run application locally using [Foreman](https://devcenter.heroku.com/articles/procfile#developing-locally-with-foreman)
 
@@ -36,7 +36,7 @@ Deploy application to Heroku
     
 ## Links
 
-* [Demo](http://hyperpdf-example-app.herokuapp.com)
-* [Add-on description and plans](https://addons.heroku.com/hyperpdf)
-* [Full documentation](https://devcenter.heroku.com/articles/hyperpdf)
-* [Support](mailto:support@hyper-pdf.com)
+* [Demo](http://hypdf-example-app.herokuapp.com)
+* [Add-on description and plans](https://addons.heroku.com/hypdf)
+* [Full documentation](https://devcenter.heroku.com/articles/hypdf)
+* [Support](mailto:support@hypdf.com)
