@@ -52,4 +52,13 @@ class PdfController < ApplicationController
     end
   end
 
+  def async_pdf
+    if params[:error]
+      puts "##### [#{Time.now}] ERROR: #{params[:message]}"
+    else
+      puts "##### [#{Time.now}] PDF created (#{request.headers['hypdf-pages']} pages): #{params[:url]}"
+    end
+    render(text: 'ok')
+  end
+
 end
