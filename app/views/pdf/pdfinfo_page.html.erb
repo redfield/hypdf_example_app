@@ -1,0 +1,22 @@
+<h2>
+  <%= link_to('htmltopdf', 'htmltopdf') %>
+  &nbsp;
+  pdfinfo
+  &nbsp;
+  <%= link_to('pdftotext', 'pdftotext') %>
+  &nbsp;
+  <%= link_to('pdfextract', 'pdfextract') %>
+  &nbsp;
+  <%= link_to('pdfunite', 'pdfunite') %>
+</h2>
+
+<%= form_tag('/pdfinfo', multipart: true) do %>
+
+  <label>PDF file</label>
+  <%= file_field_tag :file %>
+
+  <div class="submit-buttons">
+    <%= submit_tag 'Get info', class: 'btn' %>
+  </div>
+
+<% end %>

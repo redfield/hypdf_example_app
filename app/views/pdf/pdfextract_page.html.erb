@@ -1,0 +1,29 @@
+<h2>
+  <%= link_to('htmltopdf', 'htmltopdf') %>
+  &nbsp;
+  <%= link_to('pdfinfo', 'pdfinfo') %>
+  &nbsp;
+  <%= link_to('pdftotext', 'pdftotext') %>
+  &nbsp;
+  pdfextract
+  &nbsp;
+  <%= link_to('pdfunite', 'pdfunite') %>
+</h2>
+
+<%= form_tag('/pdfextract', multipart: true) do %>
+
+  <label>PDF file</label>
+  <%= file_field_tag :file %>
+
+  <label>Firs page to extract</label>
+  <%= number_field_tag 'options[first_page]', 1 %>
+
+  <label>Last page to extract</label>
+  <%= number_field_tag 'options[last_page]', 1 %>
+
+  <div class="submit-buttons">
+    <%= submit_tag 'Download PDF', class: 'btn btn-primary' %> or
+    <%= submit_tag 'Upload it to S3', class: 'btn' %>
+  </div>
+
+<% end %>

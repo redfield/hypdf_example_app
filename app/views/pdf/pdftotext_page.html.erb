@@ -1,0 +1,59 @@
+<h2>
+  <%= link_to('htmltopdf', 'htmltopdf') %>
+  &nbsp;
+  <%= link_to('pdfinfo', 'pdfinfo') %>
+  &nbsp;
+  pdftotext
+  &nbsp;
+  <%= link_to('pdfextract', 'pdfextract') %>
+  &nbsp;
+  <%= link_to('pdfunite', 'pdfunite') %>
+</h2>
+
+<%= form_tag('/pdftotext', multipart: true) do %>
+
+  <div class="row">
+    <div class="span4">
+
+      <label>PDF file</label>
+      <%= file_field_tag :file %>
+
+      <label>Firs page to convert</label>
+      <%= number_field_tag 'options[first_page]', 1 %>
+
+      <label>Last page to convert</label>
+      <%= number_field_tag 'options[last_page]', 1 %>
+
+      <label class="checkbox">
+        <%= check_box_tag 'options[no_page_break]', true %> Don't insert page breaks
+      </label>
+
+    </div>
+
+    <div class="span4">
+
+      <label>x-coordinate of the crop area top left corner</label>
+      <%= number_field_tag 'options[crop_x]', 0 %>
+
+      <label>y-coordinate of the crop area top left corner</label>
+      <%= number_field_tag 'options[crop_y]', 0 %>
+
+      <label>Width of crop area in pixels</label>
+      <%= number_field_tag 'options[crop_width]', 0 %>
+
+      <label>Height of crop area in pixels</label>
+      <%= number_field_tag 'options[crop_height]', 0 %>
+
+    </div>
+  </div>
+
+  <div class="submit-buttons">
+    <%= submit_tag 'Get text', class: 'btn' %>
+  </div>
+
+<% end %>
+
+<% if @text %>
+  <h3>Text</h3>
+  <p><%= @text %></p>
+<% end %>

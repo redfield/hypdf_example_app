@@ -1,6 +1,16 @@
-<h2>Create PDF</h2>
+<h2>
+  htmltopdf
+  &nbsp;
+  <%= link_to('pdfinfo', 'pdfinfo') %>
+  &nbsp;
+  <%= link_to('pdftotext', 'pdftotext') %>
+  &nbsp;
+  <%= link_to('pdfextract', 'pdfextract') %>
+  &nbsp;
+  <%= link_to('pdfunite', 'pdfunite') %>
+</h2>
 
-<%= form_tag('/pdf') do %>
+<%= form_tag('/htmltopdf') do %>
   <%= text_area_tag :content, @html, class: 'content' %>
 
   <div class="row">
