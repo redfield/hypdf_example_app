@@ -23,7 +23,10 @@ class PdfController < ApplicationController
             </tr>
           </table>
 
-          <p>Text input: <input type="text"></input></p>
+          <p>
+            Text input: <input name="some_text_field" value="some value" type="text">
+            Checkbox: <input name="some_checkbox_field" type="checkbox"> Landscape orientation
+          </p>
 
           <p style="page-break-after:always;">Page breaks after me</p>
 
