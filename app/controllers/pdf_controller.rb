@@ -114,7 +114,7 @@ class PdfController < ApplicationController
     if params[:error]
       puts "##### [#{Time.now}] ERROR: #{params[:message]}"
     else
-      puts "##### [#{Time.now}] PDF created (#{request.headers['hypdf-pages']} pages): #{params[:url]}"
+      puts "##### [#{Time.now}] PDF #{request.headers['hypdf-job-id']} created (#{request.headers['hypdf-pages']} pages): #{params[:url]}"
     end
     render(text: 'ok')
   end
