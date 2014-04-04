@@ -66,6 +66,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     polyglot (0.3.3)
+    psych (2.0.5)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -127,6 +128,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   hypdf
   jquery-rails
+  psych (~> 2.0.5)
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   thin
