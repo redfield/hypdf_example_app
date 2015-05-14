@@ -3,11 +3,27 @@ class PdfController < ApplicationController
   def htmltopdf_page
     @html = %Q{
       <html>
-        <head><title>Example HTML</title></head>
-        <body>
-          <h1>HyPDF add-on</h1>
+        <head>
+          <title>Example HTML</title>
 
-          <div style="background:#E1EAF3;border:1px solid #d0dbe6;border-radius: 3px;color:#4F535D;margin: 0 0 22px 0;padding:12px;">
+          <style type="text/css">
+            @font-face {
+              font-family: 'Lato';
+              font-style: normal;
+              font-weight: normal;
+              src: url('https://d1nw9trx4ugmtn.cloudfront.net/fonts/lato/Lato-Regular.ttf') format('truetype');
+            }
+          </style>
+
+        </head>
+        <body>
+          <h1 style="font-family: 'Lato';">HyPDF add-on</h1>
+
+          <p style="text-align: center;">
+            <img src="https://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/icons/1289/original.png">
+          </p>
+
+          <div style="font-face: 'Liberation Sans'; background:#E1EAF3;border:1px solid #d0dbe6;border-radius: 3px;color:#4F535D;margin: 0 0 22px 0;padding:12px;">
             HyPDF is an <a href="https://addons.heroku.com/hypdf">add-on</a> that provides you the full set of tools for working with PDF docuemnts.
           </div>
 
@@ -18,7 +34,7 @@ class PdfController < ApplicationController
           <table width="100%">
             <tr>
               <td style="background: red;">Red cell</td>
-              <td style="background: green;">Green cell</td>
+              <td style="background: green; opacity: 0.5;">Green cell with opacity</td>
               <td style="background: blue;">Blue cell</td>
             </tr>
           </table>
