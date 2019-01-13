@@ -1,6 +1,6 @@
 ## Demo
 
-Demo application can be found [here] (http://hypdf-example-app.herokuapp.com).
+Demo application can be found [here](http://hypdf-example-app.herokuapp.com).
 
 ## Installing
 
